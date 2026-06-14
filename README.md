@@ -8,6 +8,13 @@ The objective of this project is to implement a robust reactive line-following c
 
 The simulation is designed to automatically terminate with high precision once the track is fully completed.
 
+## Project Requirements
+
+To successfully pass this laboratory assignment, the controller had to strictly satisfy the following engineering constraints:
+1. **Line Following:** The robot must autonomously follow the black track using only 3 ground-facing infrared sensors (`gs0`, `gs1`, `gs2`).
+2. **2D Kinematic Odometry:** The code must continuously calculate the robot's dead reckoning pose ($x_w, y_w, \omega_z$) using differential drive forward kinematics.
+3. **Automated Termination:** The simulation must automatically bring the robot to a complete stop ($v_L = 0, v_R = 0$) and exit the loop immediately after crossing the start/finish line upon lap completion.
+
 ### Key Features
 * **Reactive Navigation:** Line following utilizing 3 infrared ground sensors with dynamic adjustment for straight lines and sharp turns.
 * **Dead Reckoning Odometry:** Real-time computation of linear displacement and angular orientation based on the differential drive kinematic model.
