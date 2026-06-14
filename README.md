@@ -30,7 +30,7 @@ The simulation is designed to automatically terminate with high precision once t
 [Console Output Example]
 Position: X=-0.068m, Y=0.124m | Localization error: 0.180m ~18.0cm
 Robot successfully crossed the finish line and came to a complete stop.
-
+```
 ## Technologies Used
 
 * **Webots:** Robot simulation environment.
