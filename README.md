@@ -14,6 +14,9 @@ To successfully pass this laboratory assignment, the controller had to strictly 
 1. **Line Following:** The robot must autonomously follow the black track using only 3 ground-facing infrared sensors (`gs0`, `gs1`, `gs2`).
 2. **2D Kinematic Odometry:** The code must continuously calculate the robot's dead reckoning pose ($x_w, y_w, \omega_z$) using differential drive forward kinematics.
 3. **Automated Termination:** The simulation must automatically bring the robot to a complete stop ($v_L = 0, v_R = 0$) and exit the loop immediately after crossing the start/finish line upon lap completion.
+4. **Accuracy Threshold:** The final accumulated localization error (Euclidean distance from the origin at the stop sequence) must be strictly **under 20.0 cm** to receive full credit.
+
+---
 
 ### Key Features
 * **Reactive Navigation:** Line following utilizing 3 infrared ground sensors with dynamic adjustment for straight lines and sharp turns.
