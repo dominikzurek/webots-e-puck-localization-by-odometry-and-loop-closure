@@ -12,7 +12,15 @@ The simulation is designed to automatically terminate with high precision once t
 * **Reactive Navigation:** Line following utilizing 3 infrared ground sensors with dynamic adjustment for straight lines and sharp turns.
 * **Dead Reckoning Odometry:** Real-time computation of linear displacement and angular orientation based on the differential drive kinematic model.
 * **Deterministic Spatial Triggering:** Automated simulation cutoff using geographical coordinate boundaries optimized for high repeatability.
+  
+## Execution Steps
 
+* **Step 0:** Read and process data from 3 infrared ground sensors (`gs0`, `gs1`, `gs2`).
+* **Step 1:** Execute reactive line-following control with dynamic speed corrections for sharp turns.
+* **Step 2:** Compute real-time linear displacement ($\Delta x$) and angular orientation updates ($\Delta\omega$).
+* **Step 3:** Estimate global 2D world coordinates ($x_w, y_w$) and monitor Euclidean distance from the origin.
+* **Step 4:** Trigger an automated, high-precision stop sequence once the start/finish line region is crossed (only in simulation :) ).
+  
 ## Results & Performance
 
 * **Target Constraint:** The course required the final localization error to remain under **20.0 cm**.
@@ -22,3 +30,9 @@ The simulation is designed to automatically terminate with high precision once t
 [Console Output Example]
 Position: X=-0.068m, Y=0.124m | Localization error: 0.180m ~18.0cm
 Robot successfully crossed the finish line and came to a complete stop.
+
+## Technologies Used
+
+* **Webots:** Robot simulation environment.
+* **Python / NumPy:** Controller programming, forward kinematics, and numerical integration.
+* **Webots e-puck model:** Differential drive robot equipped with 3 IR ground sensors.
