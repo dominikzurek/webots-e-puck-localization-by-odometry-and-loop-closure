@@ -20,6 +20,8 @@ import numpy as np
 
 #  --- Constants ---
 MAX_SPEED = 6.28
+WHEEL_RADIUS = 0.0201
+WHEEL_CENTER_DISTANCE = 0.052
 
 #  --- Robot Initialize ---
 robot = Robot()
@@ -75,14 +77,14 @@ while robot.step(timestep) != -1:
 
     # ------------------ Odometry Compute ------------------
     # Robot's linear displacement
-    delta_x = ((0.0201 * (phildot + phirdot)) / 2) * delta_t
+    delta_x = ((WHEEL_RADIUS * (phildot + phirdot)) / 2) * delta_t
 
     # Transform displacement onto world axis
     xw = xw + np.cos(omega_z) * delta_x
     yw = yw + np.sin(omega_z) * delta_x
 
     # Update orientation around world Z axis
-    delta_omega = ((0.0201 * (phirdot - phildot)) / 0.052) * delta_t
+    delta_omega = ((WHEEL_RADIUS * (phirdot - phildot)) / WHEEL_CENTER_DISTANCE) * delta_t
     omega_z += delta_omega
 
     # Compute distance from the origin
